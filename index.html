@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SafeZone AI Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="dashboard">
+
+    <!-- Header -->
+    <header class="topbar">
+      <div>
+        <h1>🚧 SafeZone AI</h1>
+        <p>Predictive Blind-Spot Accident Prevention System</p>
+      </div>
+
+      <div class="system-badge">
+        LIVE MONITORING
+      </div>
+    </header>
+
+    <!-- Main Grid -->
+    <section class="grid">
+
+      <!-- Live Vehicle Status -->
+      <div class="card status-card">
+        <div class="card-header">
+          <h2>Live Vehicle Status</h2>
+          <span class="pulse-dot"></span>
+        </div>
+
+        <div class="status-grid">
+          <div class="info-box">
+            <span>Vehicle ID</span>
+            <strong id="vehicleId">---</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Distance</span>
+            <strong><span id="distance">---</span> cm</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Risk Level</span>
+            <strong id="riskLevel">---</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Approach Speed</span>
+            <strong><span id="approachSpeed">---</span> cm/sec</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Motor Status</span>
+            <strong id="motorStatus">---</strong>
+          </div>
+
+          <div class="info-box">
+            <span>Location</span>
+            <strong id="locationName">---</strong>
+          </div>
+        </div>
+
+        <p class="alert-line">
+          Alert Status: <span id="alertStatus">---</span>
+        </p>
+
+        <a id="mapLink" href="#" target="_blank" class="map-btn">
+          📍 Open Accident Location
+        </a>
+      </div>
+
+      <!-- Supervisor Alert -->
+      <div class="card alert-card" id="alertCard">
+        <h2>Supervisor Alert</h2>
+        <div class="alert-icon">🛡️</div>
+        <h3 id="mainAlert">Waiting for vehicle data...</h3>
+      </div>
+
+      <!-- AI Safety Analytics -->
+      <div class="card analytics-card">
+        <h2>AI Safety Analytics</h2>
+
+        <div class="analytics-grid">
+          <div class="metric">
+            <span>Total Alerts</span>
+            <strong id="totalAlerts">0</strong>
+          </div>
+
+          <div class="metric warning-metric">
+            <span>Warning</span>
+            <strong id="warningAlerts">0</strong>
+          </div>
+
+          <div class="metric danger-metric">
+            <span>Danger</span>
+            <strong id="dangerAlerts">0</strong>
+          </div>
+
+          <div class="metric critical-metric">
+            <span>Critical</span>
+            <strong id="criticalAlerts">0</strong>
+          </div>
+        </div>
+
+        <div class="unsafe-zone">
+          <span>Most Unsafe Zone</span>
+          <strong id="unsafeZone">---</strong>
+        </div>
+      </div>
+
+      <!-- Emergency Response -->
+      <div class="card emergency-card" id="emergencyCard">
+        <h2>Emergency Response Message</h2>
+        <p id="emergencyMessage">No emergency message generated.</p>
+      </div>
+
+      <!-- AI Prediction Engine -->
+      <div class="card prediction-card" id="predictionCard">
+        <h2>AI Prediction Engine</h2>
+
+        <div class="risk-score-box">
+          <span>AI Risk Score</span>
+          <strong><span id="aiRiskScore">0</span> / 100</strong>
+        </div>
+
+        <div class="prediction-list">
+          <p>Collision Countdown: <span id="collisionCountdown">---</span></p>
+          <p>Priority Level: <span id="priorityLevel">---</span></p>
+          <p>Recommended Action: <span id="recommendedAction">---</span></p>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Black Box Logs -->
+    <section class="card logs-card">
+      <div class="card-header">
+        <h2>Black Box Accident Logs</h2>
+        <span class="log-badge">Incident History</span>
+      </div>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Vehicle</th>
+              <th>Distance</th>
+              <th>Risk</th>
+              <th>Approach Speed</th>
+              <th>Location</th>
+              <th>Map</th>
+              <th>Alert</th>
+              <th>Motor</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+
+          <tbody id="logsTable"></tbody>
+        </table>
+      </div>
+    </section>
+
+  </div>
+
+  <script type="module" src="script.js"></script>
+
+</body>
+</html>
